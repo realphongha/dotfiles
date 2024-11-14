@@ -22,8 +22,10 @@ config.font = wezterm.font(
 )
 if os == "windows" then
     config.font_size = 11.0
-else
+elseif os == "macos" then
     config.font_size = 14.0
+else
+    config.font_size = 13.0
 end
 
 -- colorscheme
@@ -33,12 +35,12 @@ config.color_scheme = "rose-pine"
 local wallpaper = ""
 if os == "windows" then
     wallpaper = [[D:\For fun\pics\background\reimu.jpg]]
--- elseif os == "macos" then
---     wallpaper = [[/Users/admin/Pictures/frieren.jpeg]]
 end
 if os == "macos" then
     config.window_background_opacity = 0.85
     config.macos_window_background_blur = 30
+elseif os == "linux" then
+    config.window_background_opacity = 0.9
 else
     config.background = {
         {
