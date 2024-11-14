@@ -2,6 +2,7 @@ OS="$(uname -s)"  # Linux, Darwin
 NVIM_REPO="https://github.com/realphongha/nvim-configs.git"
 NVIM_CFG_PATH="~/.config/nvim"
 NVIM_DATA_PATH="~/.local/share/nvim"
+TMUX_CFG_PATH="~/.tmux.conf"
 
 while true; do
     read -p "Do you wish to install Neovim configs (older configs will be overwritten)? " yn
@@ -12,3 +13,8 @@ while true; do
     esac
 done
 
+if [ ! -d ~/.tmux/plugins/tpm ] ; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+rm $TMUX_CFG_PATH
+cp .tmux.conf $TMUX_CFG_PATH
