@@ -19,7 +19,7 @@ done
 
 # git
 rm $GIT_CFG_PATH
-ln -s $(pwd)/.gitconfig $GIT_CFG_PATH
+cp $(pwd)/.gitconfig $GIT_CFG_PATH
 
 # tmux
 if [ ! -d ~/.tmux/plugins/tpm ] ; then
