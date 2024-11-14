@@ -1,2 +1,2 @@
 # dotfiles
-My dotfiles for Linux and MacOS.
+My dotfiles for Linux, MacOS and Windows.

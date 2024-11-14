@@ -1,0 +1,13 @@
+[alias]
+    d = difftool
+    s = status
+    a = add .
+    c = commit
+[pull]
+    ff = only
+[core]
+    editor = nvim
+    autocrlf = true
+    fileMode = false
+[diff]
+    tool = nvimdiff
