@@ -7,7 +7,6 @@
     ff = only
 [core]
     editor = nvim
-    autocrlf = true
     fileMode = false
 [diff]
     tool = nvimdiff

@@ -1,11 +1,9 @@
 OS="$(uname -s)"  # Linux, Darwin
 NVIM_REPO="https://github.com/realphongha/nvim-configs.git"
-NVIM_CFG_PATH="~/.config/nvim"
-NVIM_DATA_PATH="~/.local/share/nvim"
+NVIM_CFG_PATH="$HOME/.config/nvim"
+NVIM_DATA_PATH="$HOME/.local/share/nvim"
 GIT_CFG_PATH=$HOME/.gitconfig
 TMUX_CFG_PATH=$HOME/.tmux.conf
-WEZTERM_CFG_PATH=$HOME/.wezterm.lua
-AEROSPACE_CFG_PATH=$HOME/.aerospace.toml
 
 # neovim
 while true; do
@@ -18,22 +16,12 @@ while true; do
 done
 
 # git
-rm $GIT_CFG_PATH
+rm -f $GIT_CFG_PATH
 cp $(pwd)/.gitconfig $GIT_CFG_PATH
 
 # tmux
 if [ ! -d ~/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
-rm $TMUX_CFG_PATH
+rm -f $TMUX_CFG_PATH
 ln -s $(pwd)/.tmux.conf $TMUX_CFG_PATH
-
-# wezterm
-rm $WEZTERM_CFG_PATH
-ln -s $(pwd)/.wezterm.lua $WEZTERM_CFG_PATH
-
-# aerospace
-if [ $OS = "Darwin" ]; then
-    rm $AEROSPACE_CFG_PATH
-    ln -s $(pwd)/.aerospace.toml $AEROSPACE_CFG_PATH
-fi
