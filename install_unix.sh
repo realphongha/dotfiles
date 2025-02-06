@@ -4,6 +4,7 @@ NVIM_CFG_PATH="$HOME/.config/nvim"
 NVIM_DATA_PATH="$HOME/.local/share/nvim"
 GIT_CFG_PATH=$HOME/.gitconfig
 TMUX_CFG_PATH=$HOME/.tmux.conf
+YAZI_CFG_PATH=$HOME/yazi
 
 # neovim
 while true; do
@@ -24,4 +25,9 @@ if [ ! -d ~/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 rm -f $TMUX_CFG_PATH
-ln -s $(pwd)/.tmux.conf $TMUX_CFG_PATH
+cp $(pwd)/.tmux.conf $TMUX_CFG_PATH
+
+# yazi
+rm -rf $YAZI_CFG_PATH
+mkdir -p $YAZI_CFG_PATH
+cp $(pwd)/yazi/* $YAZI_CFG_PATH
