@@ -1,0 +1,7 @@
+model = "gpt-5-mini"
+model_reasoning_effort = "low"
+preferred_auth_method = "apikey"
+
+[model_providers.ollama]
+name = "Ollama"
+base_url = "http://localhost:11434/v1"
