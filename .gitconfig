@@ -2,7 +2,7 @@
     d = difftool
     s = status
     a = add .
-    c = commit
+    c = commit -m
     pr = pull --rebase
     mff = merge --ff-only
 [pull]
