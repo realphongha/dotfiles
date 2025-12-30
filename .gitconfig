@@ -3,10 +3,13 @@
     s = status
     a = add .
     c = commit
+    pr = pull --rebase
+    mff = merge --ff-only
 [pull]
     ff = only
+[merge]
+    ff = false
 [core]
     editor = nvim
-    fileMode = false
 [diff]
     tool = nvimdiff
