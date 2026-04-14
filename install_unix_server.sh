@@ -1,10 +1,16 @@
+# check if rsync is installed
+if ! command -v rsync &> /dev/null
+then
+    echo "rsync is not installed. Please install it and try again."
+    exit 1
+fi
 OS="$(uname -s)"  # Linux, Darwin
 NVIM_REPO="https://github.com/realphongha/nvim-configs.git"
 NVIM_CFG_PATH="$HOME/.config/nvim"
 NVIM_DATA_PATH="$HOME/.local/share/nvim"
 GIT_CFG_PATH=$HOME/.gitconfig
 TMUX_CFG_PATH=$HOME/.tmux.conf
-YAZI_CFG_PATH=$HOME/yazi
+YAZI_CFG_PATH=$HOME/yazi/
 
 # neovim
 while true; do
@@ -17,17 +23,13 @@ while true; do
 done
 
 # git
-rm -f $GIT_CFG_PATH
-cp $(pwd)/.gitconfig $GIT_CFG_PATH
+rsync -a $(pwd)/.gitconfig $GIT_CFG_PATH
 
 # tmux
 if [ ! -d ~/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
-rm -f $TMUX_CFG_PATH
-cp $(pwd)/.tmux.conf $TMUX_CFG_PATH
+rsync -a $(pwd)/.tmux.conf $TMUX_CFG_PATH
 
 # yazi
-rm -rf $YAZI_CFG_PATH
-mkdir -p $YAZI_CFG_PATH
-cp $(pwd)/yazi/* $YAZI_CFG_PATH
+rsync -a --delete $(pwd)/yazi/ $YAZI_CFG_PATH
