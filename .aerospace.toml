@@ -84,11 +84,11 @@ on-window-detected = [
     },
     {
         if = 'test %{app-bundle-id} = com.apple.QuickTimePlayerX',
-        run = ['layout floating tiling', 'move-node-to-workspace 5']
+        run = 'move-node-to-workspace 5'
     },
     {
         if = 'test %{app-bundle-id} = org.videolan.vlc',
-        run = ['layout floating tiling', 'move-node-to-workspace 5']
+        run = 'move-node-to-workspace 5'
     },
     {
         if = 'test %{app-bundle-id} = com.google.Chrome',
