@@ -1,7 +1,0 @@
-model = "gpt-5.1-codex-max"
-model_reasoning_effort = "medium"
-preferred_auth_method = "apikey"
-
-[model_providers.ollama]
-name = "Ollama"
-base_url = "http://localhost:11434/v1"
